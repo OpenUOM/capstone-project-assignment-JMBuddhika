@@ -62,9 +62,10 @@ app.post("/editTeacher", async function (req, res) {
     "Request received to update teacher. Req body: " + JSON.stringify(reqBody)
   );
   let data = await updateTeacher(reqBody.name,reqBody.age,reqBody.id);
+  data1 = reqBody.name+reqBody.age,+reqBody.id
 
   res.setHeader("Content-Type", "application/json");
-  res.end(JSON.stringify(data));
+  res.end(JSON.stringify(data1));
 });
 
 app.post("/deleteTeacher", async function (req, res) {
