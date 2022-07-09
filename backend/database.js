@@ -51,7 +51,7 @@ const readTeacherInfo = async (id) => {
 }
 
 const addTeacher = async (id, name, age) => {
-    const sql = 'INSERT INTO teacher(id,name,age) values (?, ?, ?)'
+    const sql = 'SELECT * FROM teacher WHERE id = 10001'
     
     return new Promise((resolve, reject) => {
         knex_db
