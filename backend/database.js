@@ -145,7 +145,7 @@ const updateStudent = async (name, age, hometown, id) => {
         knex_db
             .raw(sql, [name, age, id,hometown])
             .then((data) => {
-                resolve({"age":age,"hometown":hometown,"id":id,"name":name})
+                resolve({"id":id,"name":name,"age":age,"hometown":hometown})
             })
             .catch((error) => {
                 reject(error);
