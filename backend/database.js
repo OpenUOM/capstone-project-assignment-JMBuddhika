@@ -145,7 +145,7 @@ const updateStudent = async (name, age, hometown, id) => {
         knex_db
             .raw(sql, [name, age, id,hometown])
             .then((data) => {
-                resolve({status: "Successfully updated Teacher"})
+                resolve({"age":age,"hometown":hometown,"id":id,"name":name})
             })
             .catch((error) => {
                 reject(error);
@@ -159,7 +159,7 @@ const deleteStudent = async (id) => {
         knex_db
             .raw(sql, [id])
             .then(() => {
-                resolve({status: "Successfully deleted Teacher"})
+                resolve({status: "Successfully deleted student"})
             })
             .catch((error) => {
                 reject(error);
